@@ -23,8 +23,6 @@ import os
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "unsafe-secret-in-dev")
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-f^u*1in-na9i*pb5+w!muy^o_rw1)zi@hs*^xk!!9982375=82'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False

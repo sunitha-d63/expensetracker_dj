@@ -1,0 +1,20 @@
+<h2>Welcome, {{ request.user.username }}</h2>
+<p>Total this month: ${{ total }}</p>
+<ul>
+  {% for cat in breakdown %}
+    <li>{{ cat.category }}: ${{ cat.total }}</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'expense_add' %}">Add Expense</a> |
+<a href="{% url 'logout' %}">Logout</a>
+<ul>
+  {% for exp in expenses %}
+    <li>{{ exp.title }} - ${{ exp.amount }} 
+      [<a href="{% url 'expense_edit' exp.pk %}">Edit</a>] 
+      [<a href="{% url 'expense_delete' exp.pk %}">Delete</a>]
+    </li>
+  {% endfor %}
+</ul>
+{% if request.user.is_superuser %}
+  <a href="{% url 'admin_view' %}">Admin View</a>
+{% endif %}

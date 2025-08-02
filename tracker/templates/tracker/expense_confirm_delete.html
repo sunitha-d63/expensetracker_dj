@@ -1,0 +1,4 @@
+<h2>Confirm Deletion</h2>
+<p>Delete "{{ expense.title }}"?</p>
+<form method="post">{% csrf_token %}<button>Delete</button></form>
+<a href="{% url 'dashboard' %}">Cancel</a>

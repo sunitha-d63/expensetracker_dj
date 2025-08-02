@@ -1,0 +1,12 @@
+<h2>All Users & Expenses (Admin)</h2>
+{% for user in users %}
+  <h3>{{ user.username }}</h3>
+  <ul>
+    {% for exp in expenses %}
+      {% if exp.user == user %}
+        <li>{{ exp.title }} - ${{ exp.amount }} ({{ exp.date }})</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endfor %}
+<a href="{% url 'dashboard' %}">Back</a>
